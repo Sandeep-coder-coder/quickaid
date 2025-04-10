@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Quick Guide to First Aid{% endblock %}
+
+{% block content %}
+    <h2>Quick First Aid Guides</h2>
+    <ul>
+        {% for guide_key in guides %}
+        <li>
+            <a href="{{ url_for('guide', aid_type=guide_key) }}">{{ first_aid_guides[guide_key].title }}</a>
+            <p class="description">{{ first_aid_guides[guide_key].description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

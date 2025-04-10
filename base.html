@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuickAid - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>QuickAid</h1>
+        <form action="/search" method="post">
+            <input type="text" name="query" placeholder="Search first aid...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 QuickAid</p>
+    </footer>
+</body>
+</html>
